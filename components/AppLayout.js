@@ -1,20 +1,27 @@
 import PropsTypes from "prop-types";
 import Link from "next/Link";
+import { Menu } from "antd";
 
 const AppLayout = ({ children }) => {
   return (
     <div>
-      <div>
-        <Link href="/">
-          <a>NODEBIRD</a>
-        </Link>
-        <Link href="/profile">
-          <a>PROFILE</a>
-        </Link>
-        <Link href="/signup">
-          <a>SIGNUP</a>
-        </Link>
-      </div>
+      <Menu mode="horizontal">
+        <Menu.Item>
+          <Link href="/">
+            <a>NODEBIRD</a>
+          </Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link href="/profile">
+            <a>PROFILE</a>
+          </Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link href="/signup">
+            <a>SIGNUP</a>
+          </Link>
+        </Menu.Item>
+      </Menu>
       {children}
     </div>
   );

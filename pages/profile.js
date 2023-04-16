@@ -1,6 +1,14 @@
 import AppLayout from "../components/AppLayout";
+
 const Profile = () => {
-  return <AppLayout>Profile Page</AppLayout>;
+  return (
+    <>
+      <head>
+        <title>profile | NodeBird</title>
+      </head>
+      <AppLayout>Profile Page</AppLayout>;
+    </>
+  );
 };
 
 export default Profile;
