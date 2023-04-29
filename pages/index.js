@@ -4,9 +4,9 @@ import Head from "next/head";
 const Home = () => {
   return (
     <>
-      <head>
+      <Head>
         <title>NodeBird</title>
-      </head>
+      </Head>
       <AppLayout>
         <div>Hello, Next!</div>
       </AppLayout>
