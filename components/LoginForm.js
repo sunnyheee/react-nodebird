@@ -1,6 +1,11 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useMemo } from "react";
 import { Form, Input, Button } from "antd";
 import Link from "next/link";
+import styled from "styled-components";
+
+const ButtonWrapper = styled.div`
+  margin-top: 10px;
+`;
 
 const LoginForm = () => {
   const [id, setId] = useState("");
@@ -14,6 +19,11 @@ const LoginForm = () => {
     setpassword(e.target.value);
   }, []);
 
+  // We don't use inline styles for optimization
+  // (최적화를 위해 인라인 스타일은 쓰지않고 useMemo, styled-component등을 사용 )
+  // const style = useMemo(() => {
+  //   marginTop: 10;
+  // }, []);
   return (
     <Form>
       <div>
@@ -32,7 +42,8 @@ const LoginForm = () => {
           required
         />
       </div>
-      <div>
+      {/* <ButtonWrapper style={style}> */}
+      <ButtonWrapper>
         <Button type="primary" htmlType="submit" loading={false}>
           Login
         </Button>
@@ -41,7 +52,7 @@ const LoginForm = () => {
             <Button>JOIN</Button>
           </a>
         </Link>
-      </div>
+      </ButtonWrapper>
     </Form>
   );
 };
