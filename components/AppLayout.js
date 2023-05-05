@@ -51,7 +51,6 @@ const AppLayout = ({ children }) => {
           <a href="https://github.com/sunnyheee">Made by sunny</a>
         </Col>
       </Row>
-      {children}
     </div>
   );
 };
