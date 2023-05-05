@@ -1,12 +1,31 @@
+import Head from "next/head";
+
 import AppLayout from "../components/AppLayout";
+import NicknameEditForm from "../components/NicknameEditForm";
+import FollowList from "../components/FollowList";
 
 const Profile = () => {
+  const followerList = [
+    { nickname: "jenny" },
+    { nickname: "lisa" },
+    { nickname: "roze" },
+  ];
+  const followingList = [
+    { nickname: "jenny" },
+    { nickname: "lisa" },
+    { nickname: "roze" },
+  ];
+
   return (
     <>
-      <head>
+      <Head>
         <title>profile | NodeBird</title>
-      </head>
-      <AppLayout>Profile Page</AppLayout>;
+      </Head>
+      <AppLayout>
+        <NicknameEditForm />
+        <FollowList header="Following list" data={followingList} />
+        <FollowList header="Follower list" data={followerList} />
+      </AppLayout>
     </>
   );
 };
